@@ -8,6 +8,7 @@ class Cell : public QGraphicsWidget
 	Q_OBJECT
 public:
 	explicit Cell(int x, int y, int v, QGraphicsItem * parent = 0, Qt::WindowFlags wFlags = 0);
+	~Cell();
 	void paint(QPainter * painter, const QStyleOptionGraphicsItem *, QWidget * = 0);
 	QRectF boundingRect(void) const;
 	int x(void) const {return data.x;}

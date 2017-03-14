@@ -16,6 +16,12 @@ Cell::Cell(int x, int y, int v, QGraphicsItem *parent, Qt::WindowFlags wFlags) :
 	refresh();
 }
 
+Cell::~Cell()
+{
+	if (scene())
+		scene()->removeItem(this);
+}
+
 QRectF Cell::boundingRect(void) const
 {
 	QRectF rCon(FRAME, FRAME, scene()->width() - FRAME * 2, scene()->height() - FRAME * 2);
